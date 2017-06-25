@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <compose xsi:type="frameweb:EntityModel" name="C2dDomain">
+    <packagedElement xsi:type="frameweb:DomainPackage" name="Domain">
+      <packagedElement xsi:type="frameweb:DomainClass" name="Researcher"/>
+      <packagedElement xsi:type="uml:Class" name="dblp::Person"/>
+      <packagedElement xsi:type="uml:Dependency" name="" client="//@compose.0/Domain/Researcher" supplier="//@compose.0/Domain/dblp::Person"/>
+    </packagedElement>
+  </compose>
+</frameweb:FramewebProject>
