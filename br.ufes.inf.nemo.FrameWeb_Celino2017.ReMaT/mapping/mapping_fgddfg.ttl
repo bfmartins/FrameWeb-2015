@@ -1,0 +1,86 @@
+@prefix map: </Users/danillo.celino/git/ReMaT/rematgenerator-master/remat.generator/mapping-fgddfg.ttl#> .
+@prefix fgddfg: <dfgfdf> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix iswc: <http://annotation.semanticweb.org/iswc/iswc.daml#> .
+@prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+@prefix dblp: <http://dblp.uni-trier.de/rdf/schema-2015-01-26#> .
+
+map:database a d2rq:Database;
+ d2rq:jdbcDSN "dffgdfg";
+ d2rq:jdbcDriver "dffgfdfg";
+ d2rq:username "dffgdffg";
+ d2rq:password "gdf";
+jdbc:autoReconnect "true";
+jdbc:zeroDateTimeBehavior "convertToNull";
+.
+
+# Tables
+
+map:Researcher a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:class fgddfg:Researcher;
+d2rq:classDefinitionLabel "Researcher";
+owl:equivalentClass dblp:Person;
+rdfs:subClassOf foaf:Person;
+.
+map:Researcher_name a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Researcher;
+d2rq:property fgddfg:Researcher_name;
+d2rq:propertyDefinitionLabel "Researcher name";
+owl:equivalentProperty dblp:primaryFullPersonName;
+d2rq:column "Researcher.name";
+.
+map:Researcher_cvLink a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Researcher;
+d2rq:property fgddfg:Researcher_cvLink;
+d2rq:propertyDefinitionLabel "Researcher cvLink";
+d2rq:column "Researcher.cvLink";
+.
+map:Researcher_lastUpdateDate a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Researcher;
+d2rq:property fgddfg:Researcher_lastUpdateDate;
+d2rq:propertyDefinitionLabel "Researcher lastUpdateDate";
+d2rq:column "Researcher.lastUpdateDate";
+.
+
+map:Publication a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:class fgddfg:Publication;
+d2rq:classDefinitionLabel "Publication";
+owl:equivalentClass dblp:Publication;
+.
+map:Publication_name a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Publication;
+d2rq:property fgddfg:Publication_name;
+d2rq:propertyDefinitionLabel "Publication name";
+owl:equivalentProperty foaf:name;
+d2rq:column "Publication.name";
+.
+map:Publication_year a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Publication;
+d2rq:property fgddfg:Publication_year;
+d2rq:propertyDefinitionLabel "Publication year";
+d2rq:column "Publication.year";
+.
+map:Publication_venuelnCV a d2rq:PropertyBridge;
+d2rq:belongsToClassMap map:Publication;
+d2rq:property fgddfg:Publication_venuelnCV;
+d2rq:propertyDefinitionLabel "Publication venuelnCV";
+d2rq:column "Publication.venuelnCV";
+.
+
+map:Venue a d2rq:ClassMap;
+d2rq:dataStorage map:database;
+d2rq:class fgddfg:Venue;
+d2rq:classDefinitionLabel "Venue";
+.
+

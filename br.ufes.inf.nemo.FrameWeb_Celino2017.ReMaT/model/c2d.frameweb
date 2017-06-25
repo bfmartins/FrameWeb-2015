@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015">
+  <compose xsi:type="frameweb:EntityModel" name="C2dDomain">
+    <packagedElement xsi:type="frameweb:DomainPackage" name="br.ufes.inf.nemo.c2d.domain">
+      <packagedElement xsi:type="frameweb:DomainClass" name="Researcher" table="">
+        <generalization xsi:type="frameweb:DomainGeneralization" generalizationSet="//@compose.0/br.ufes.inf.nemo.c2d.domain/Person"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name">
+          <defaultValue xsi:type="frameweb:VocabularyLiteral" name="owl:equivalentProperty" value="dblp:primaryFullPersonName"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="cvLink"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="lastUpdateDate"/>
+        <ownedAttribute xsi:type="frameweb:DomainProperty" association="//@compose.0/br.ufes.inf.nemo.c2d.domain/isResearcher"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="isResearcher" memberEnd="//@compose.0/br.ufes.inf.nemo.c2d.domain/isResearcher/Source //@compose.0/br.ufes.inf.nemo.c2d.domain/isResearcher/Target //@compose.0/br.ufes.inf.nemo.c2d.domain/Researcher/@ownedAttribute.3">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="dblp:Person" constrainedElement="//@compose.0/br.ufes.inf.nemo.c2d.domain/dblp:Person"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.inf.nemo.c2d.domain/Researcher" association="//@compose.0/br.ufes.inf.nemo.c2d.domain/isResearcher"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/br.ufes.inf.nemo.c2d.domain/dblp:Person" association="//@compose.0/br.ufes.inf.nemo.c2d.domain/isResearcher"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Publication">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name">
+          <defaultValue xsi:type="frameweb:VocabularyLiteral" name="owl:equivalentProperty" value="foaf:name"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="year"/>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="venuelnCV"/>
+        <ownedAttribute xsi:type="frameweb:DomainProperty" association="//@compose.0/br.ufes.inf.nemo.c2d.domain/isPublication"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="isPublication" memberEnd="//@compose.0/br.ufes.inf.nemo.c2d.domain/isPublication/Source //@compose.0/br.ufes.inf.nemo.c2d.domain/isPublication/Target //@compose.0/br.ufes.inf.nemo.c2d.domain/Publication/@ownedAttribute.3" navigableOwnedEnd="//@compose.0/br.ufes.inf.nemo.c2d.domain/isPublication/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="dblp:Publication"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/br.ufes.inf.nemo.c2d.domain/Publication" association="//@compose.0/br.ufes.inf.nemo.c2d.domain/isPublication"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" association="//@compose.0/br.ufes.inf.nemo.c2d.domain/isPublication"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="foaf:Person" powertypeExtent="//@compose.0/br.ufes.inf.nemo.c2d.domain/Person" isAbstract="true"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="dblp:Person" isAbstract="true"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="dblp:Publication" isAbstract="true"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Venue"/>
+      <packagedElement xsi:type="frameweb:DomainGeneralizationSet" name="Person" powertype="//@compose.0/br.ufes.inf.nemo.c2d.domain/foaf:Person" generalization="//@compose.0/br.ufes.inf.nemo.c2d.domain/Researcher/@generalization.0"/>
+    </packagedElement>
+  </compose>
+</frameweb:FramewebProject>
